@@ -6,7 +6,7 @@ About
 
 A tool for handling Human68k (Sharp X68000) floppy images.
 
-It can be used for listing and extracting files from XDF and DIM images. These are the most common, and other formats can be supported if requested.
+It can be used for listing and extracting files from XDF and DIM images. These are the most common, and other formats can be supported if requested. I can also add support for creating and altering floppy images, if anyone requests it.
 
 It uses the [elm-chan FatFS library](http://elm-chan.org/fsw/ff/00index_e.html) for reading the FAT filesystem, with small modifications.
 
