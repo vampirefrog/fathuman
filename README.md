@@ -13,10 +13,10 @@ It uses the [elm-chan FatFS library](http://elm-chan.org/fsw/ff/00index_e.html) 
 Using in Midnight Commander (mc)
 --------------------------------
 
-Add the executable (or create a link) in /usr/lib/mc/extfs.d/humanfloppy.
+Add the executable (or create a link) in /usr/lib/mc/extfs.d/.
 Add the following line to /etc/mc/mc.ext or ~/.config/mc/mc.ext
- regex/\.(xdf|dim|XDF|DIM)$
- 	Open=%cd %p/xdf://
+  regex/\.(xdf|dim|XDF|DIM)$
+  	Open=%cd %p/fathuman://
 
 Restart mc and you should now be able to just tap enter on dim and xdf files to view their content.
 
