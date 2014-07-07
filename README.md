@@ -10,6 +10,17 @@ It can be used for listing and extracting files from XDF and DIM images. These a
 
 It uses the [elm-chan FatFS library](http://elm-chan.org/fsw/ff/00index_e.html) for reading the FAT filesystem, with small modifications.
 
+Using in Midnight Commander (mc)
+--------------------------------
+
+Add the executable (or create a link) in /usr/lib/mc/extfs.d/humanfloppy.
+Add the following line to /etc/mc/mc.ext or ~/.config/mc/mc.ext
+ regex/\.(xdf|dim|XDF|DIM)$
+ 	Open=%cd %p/xdf://
+
+Restart mc and you should now be able to just tap enter on dim and xdf files to view their content.
+
+
 Licensing
 ---------
 
