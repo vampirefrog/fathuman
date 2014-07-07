@@ -165,7 +165,6 @@ FRESULT scan_files (
 	char cbuf[256], *op = cbuf, *ip = path;
 	size_t ib = strlen(path), ob = 256;
 	iconv(ic, &ip, &ib, &op, &ob);
-//      printf("Opening path [%s] = [%s]\n", path, cbuf);
 	res = f_opendir(&dir, path);		       /* Open the directory */
 	if (res == FR_OK) {
 		i = strlen(path);
@@ -207,7 +206,6 @@ FRESULT scan_files (
 				size_t inbytes = strlen(fnamebuf), outbytes = sizeof(convbuf);
 				errno = 0;
 				iconv(ic, &ip, &inbytes, &op, &outbytes);
-//			      if(errno) printf("iconv error %s\n", strerror(errno));
 				iconv(ic, NULL, NULL, NULL, NULL);
 
 				printf("%s %s %s\n", fsizebuf, timebuf, convbuf);
@@ -241,7 +239,11 @@ int main (int argc, char **argv) {
 
 	ERR_WRAP(f_mount(&fs, "", 1));
 
-	ic = iconv_open("utf8//ignore", "shift_JIS");
+	ic = iconv_open("UTF-8//ignore", "Shift_JIS");
+	if(ic == (iconv_t)-1) {
+		fprintf(stderr, "Could not init iconv: %s (%d)\n", strerror(errno), errno);
+		return 1;
+	}
 
 	if(!strcmp(argv[1], "list")) {
 		char scan_path[512];
