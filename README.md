@@ -10,6 +10,16 @@ For now, it can be used for listing and extracting files from XDF and DIM images
 
 It uses the [elm-chan FatFS library](http://elm-chan.org/fsw/ff/00index_e.html) for reading the FAT filesystem, with small modifications.
 
+Command-line usage
+------------------
+
+```
+Usage: ./fathuman <action> <file> [<arguments>]
+Actions:
+        list     - List all the files (recursively)
+        copyout - extract one file, specify as third argument
+```
+
 Using in Midnight Commander (mc)
 --------------------------------
 
