@@ -250,6 +250,10 @@ int main (int argc, char **argv) {
 		strcpy(scan_path, argc >= 4 ? argv[3] : "");
 		scan_files(scan_path);
 	} else if(!strcmp(argv[1], "copyout")) {
+		if(argc < 5) {
+			fprintf(stderr, "Usage: %s copyout <imgfile> <file> <outfile>\n", argv[0]);
+			return 1;
+		}
 		FILE *f = fopen(argv[4], "wb");
 		if(!f) {
 			fprintf(stderr, "Could not open %s: %s\n", argv[3], strerror(errno));
