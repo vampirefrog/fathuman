@@ -1,6 +1,8 @@
 fathuman
 ========
 
+![Project status](https://img.shields.io/badge/Project%20status-Beta-blue.svg)
+
 About
 -----
 
